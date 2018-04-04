@@ -23,11 +23,29 @@
  * Because nums[0] + nums[1] = 2 + 7 = 9,
  * return [0, 1].
  * 
+ * author:	Kang Zhangqi
+ * Data:	03/04/2018
  * 
  */
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        
+	int size = nums.size();
+        vector<int> results;
+        //printf("size = %d, target = %d \n",size,target);        
+        for (int i = 0; i < (size - 1); i++ ){
+        	//printf("loop i = %d ,num = %d\n", i , nums[i]);
+        	for (int j = i + 1; j < size; j++){
+        		//printf("loop j = %d ,num = %d\n", j , nums[j]);
+        		if (nums[i] + nums[j] == target){
+        		//printf("find index successed!");
+        		results.push_back(i);
+        		results.push_back(j);
+        		return results;
+      			}
+         	}
+	}
+	//printf("find index failed!\n");
+	return results;
     }
 };
