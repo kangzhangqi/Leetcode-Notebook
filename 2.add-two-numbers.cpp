@@ -4,8 +4,8 @@
  * https://leetcode.com/problems/add-two-numbers/description/
  *
  * algorithms
- * Medium (28.60%)
- * Total Accepted:    473.4K
+ * Medium (28.68%)
+ * Total Accepted:    486.6K
  * Total Submissions: 1.7M
  * Testcase Example:  '[2,4,3]\n[5,6,4]'
  *
@@ -23,8 +23,6 @@
  * Output: 7 -> 0 -> 8
  * Explanation: 342 + 465 = 807.
  * 
- * author:	kangzhangqi
- * date:	04/04/2018
  * 
  */
 /**
@@ -35,24 +33,25 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        ListNode result(0),*r = &result;
-        int carry = 0 ;
-        int sum = 0;
-        while(l1 || l2 || carry) {
-            sum = (l1 ? l1->val : 0) + (l2 ? l2->val : 0) + carry;
-            carry = sum / 10 ;
-            sum = sum % 10;
-            r->next = new ListNode(sum);
-            r = r->next;
-            l1 = l1 ? l1->next : l1;
-            l2 = l2 ? l2->next : l2;
-        }
-        return result.next;
+		ListNode result(0), *r = &result;
+		int carry = 0;
+		int num = 0;
+		while(l1 != NULL || l2 != NULL || carry !=0){
+			num = (l1 ? l1->val : 0 ) + (l2 ? l2->val : 0) + carry;
+			carry = num/10;
+			num = num%10;
+			//r->val = num;
+			r->next = new ListNode(num);
+			r = r->next;
+			if(l1 != NULL) l1=l1->next;
+			if(l2 != NULL) l2=l2->next;
+			//or an othor solution
+			//l1 = l1 ? l1->next : NULL;
+			//l2 = l2 ? l2->next : NULL;
+		}
+		return result.next;
     }
 };
-
-
