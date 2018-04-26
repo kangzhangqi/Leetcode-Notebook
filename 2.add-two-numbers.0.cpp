@@ -36,6 +36,15 @@
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        
+		ListNode result(0); *r = &result;
+		int carry = 0;
+		int num = 0;
+		while(l1 != NULL || l2 != NULL || carry !=0){
+			num = (l1 ? l1.val : 0 ) + (l2 ? l2.val : 0) + carry;
+			carry = num/10;
+			num = num%10;
+			r.val = num;
+			r->next = 
+		}
     }
 };
