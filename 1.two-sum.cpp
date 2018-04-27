@@ -24,7 +24,7 @@
  * return [0, 1].
  * 
  * author:	Kang Zhangqi
- * Data:	03/04/2018
+ * Date:	03/04/2018
  * 
  */
 class Solution {
