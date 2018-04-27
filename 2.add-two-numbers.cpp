@@ -33,6 +33,11 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+
+/*
+ * Author: Zhangqi Kang
+ * Date: 27/04/2018
+ */
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
